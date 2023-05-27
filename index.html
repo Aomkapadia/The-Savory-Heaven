@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Savory Heaven</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            scroll-behavior: smooth;
+        }
+        .container{
+            display:grid;
+            grid-template-columns: repeat(1,100%);
+            grid-template-rows: repeat(4,auto-fit);
+        }
+        .navbar{
+            display:grid;
+            grid-template-columns: 20% 46%;
+            grid-gap: 24%;
+            background-color: #207589;
+            box-sizing: border-box;
+            position:fixed;
+            margin-bottom:20px;
+            top:0px;
+            width:100%;
+        }
+        .items{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .items img{
+            height: 80px;
+            border-radius: 50px;
+        }
+        .items li a{
+            text-decoration: none;
+            color:aliceblue;
+        }
+        .items li{
+            list-style-type: none;
+            font-size: 1.5em;
+            margin:auto;
+            height:100%;
+            padding:4% 3%;
+            box-sizing: border-box;
+        }
+        .items ul{
+            width:100%;
+            height:100%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .items li:hover{
+            background-color: black;
+        }
+        .image{
+            padding-bottom: 74.5px;
+            padding-top: 161.2px;
+            width:50%;
+        }
+        .container{
+            background-image: url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?cs=srgb&dl=pexels-chan-walrus-958545.jpg&fm=jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .image p{
+            font-size: 3.6em;
+            color: white;
+            font-weight: bold;
+        }
+        .image p:nth-child(1){
+            padding-left:24%;
+        }
+        .image p:nth-child(2){
+            padding-left:35%;
+        }
+        .image p:nth-child(3){
+            padding-left:16%;
+        }
+        .second{
+            display:flex;
+            object-fit: contain;
+        }
+        .paraside{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width:48%;
+        }
+        .paraside img{
+            height:280px;
+        }
+        .about{
+            display:grid;
+            box-sizing: border-box;
+            border:2px solid black;
+            justify-content: space-around;
+            grid-template-columns: repeat(auto-fit,minmax(14%, 320px));
+            grid-template-rows: repeat(auto,100%);
+            background-color: #7ab974;
+        }
+        .about img{
+            width:80%;
+        }
+        .about .ab:nth-child(4) img{
+            border-radius: 200px;
+        }
+        .ab{
+            margin-top:5%;
+            margin-left: 5%;
+            margin-right: 5%;
+            box-sizing: border-box;
+            justify-content: center;
+            background-color: #a1dada;
+            border: 2px solid black;
+            text-align: center;
+        }
+        .table{
+            border:2px solid black;
+            background-color: rgb(196, 209, 77);
+        }
+        .table h1{
+            text-align: center;
+            padding-top: 2.4%;
+            font-size: 2.6rem;
+        }
+        .contact{display:flex;
+            flex-direction: column;
+            padding-top:4%;
+            font-size: 1.4rem;
+            align-items: center;
+            justify-content: center;
+            width:100%;
+        }
+        .submit{
+            padding-top:1.6%;
+        }
+        .submit input{
+            height:40px;
+            width:100px;
+        }
+        .cont input{
+            width:700px;
+            height:40px;
+            margin-top: 2%;
+        }
+        .burger{
+            display: none;
+        }
+        @media (max-width:1200px) {
+            .navbar{
+                z-index: 1;
+            }
+            .items li{
+                font-size: 1em;
+            }
+            .image p{
+                font-size:2.8em;
+            }
+            .image{
+                width:68%;
+            }
+        }
+        @media (max-width:766px){
+            .navbar{
+                display:flex;
+                flex-direction: column;
+                grid-gap: 0px;
+                position:fixed;
+                top:0px;
+                width:100%;
+            }
+            #ul{
+                display:none;
+            }
+            .items li{
+                padding:2% 4%;
+            }
+            .image{
+                padding-bottom: 4.5px;
+            padding-top: 85.2px;
+            width:100%;
+            }
+            .second{
+                display:flex;
+                flex-direction: column;
+            }
+            .cont input{
+                width:auto;
+            max-width:400px;
+            min-width:300px;
+            height:40px;
+            margin-top: 2%;
+            overflow: auto;
+            margin-left:2%;
+            margin-right: 2%;
+        }
+        .image p{
+            font-size:2em;
+        }
+        .paraside{
+            width:100%;
+        }
+         .image p:nth-child(1){
+            padding-left:39%;
+        }
+        .image p:nth-child(2){
+            padding-left:46%;
+        }
+        .image p:nth-child(3){
+            text-align: center;
+        }
+        .table{
+            width:100%;
+            box-sizing: border-box;
+        }
+        .paraside img{
+            height:180px;
+        }
+        .items{
+            display:flex;
+        }
+        .burger button{
+            background: #207589;
+        }
+        .burger{
+            height:100%;
+            display:block;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: flex-end;
+        }
+        .line{
+            background-color: white;
+            height:5px;
+            margin:2px;
+            width:28px;
+        }
+        .logo{
+            display:flex;
+        }
+        .img{
+            width:65%;
+            display:flex;
+            align-items: end;
+            justify-content: end;
+        }
+        .line{
+            cursor: pointer;
+        }
+        .img{
+            width:93%;
+            align-items: center;
+            justify-content: center;
+        }
+        .img img{
+            margin-left:5%;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="container">
+            <div class="navbar" id="nav">
+                <div class="items" id="logo">
+                    <div class="img">
+                        <img src="/main1/Luxury and Vintage Ornamental Coffee Shop Logo.png" alt="LOGO">
+                    </div>
+                    <div class="burger" id="burger">
+                        <button onclick="myfunction()">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </button>
+                    </div>
+                </div>
+                <div class="items" id="buttons">
+                    <ul id="ul">
+                        <li><a href="#HOME">Home</a></li>
+                        <li><a href="#ABOUTUS">About Us</a></li>
+                        <li><a href="#TABLE">Book Table</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="second" id="HOME">
+                <div class="image">
+                    <p>Welcome ! </p>
+                    <p>To</p>
+                    <p>The Savory Heaven</p>
+                </div>
+                <div class="paraside">
+                    <img src="/main1/pngwing.com.png" alt="Food Image">
+                </div>
+            </div>
+        </div>
+        <div class="about" id="ABOUTUS">
+            <div class="ab" id="ab-1">
+                <img src="/main1/Chef-logo-design-illustration-on-transparent-PNG.png" alt="" srcset="">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto inventore delectus unde non aut vel deserunt voluptas quis aspernatur vitae officia assumenda, beatae placeat, dolor aperiam illo debitis enim soluta accusantium consequatur sequi asperiores, odit molestiae. Possimus nam magni</p>
+            </div>
+            <div class="ab" id="ab-2">
+                <img src="main1/toppng.com-clipart-waiter-transparent-background-443x360.png" alt="" srcset="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quibusdam voluptate asperiores dolore! Rerum, doloremque voluptates harum adipisci, omnis nemo tempore incidunt nihil porro, debitis quas fugit iste voluptate vero velit consequuntur dignissimos optio amet nisi in consectetur est</p>
+            </div>
+            <div class="ab" id="ab-3">
+                <img src="main1/pngwing.com (1).png" alt="" srcset="">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque voluptatum cum non, deleniti recusandae suscipit, quidem doloribus expedita at unde laboriosam voluptates blanditiis facere! Quisquam asperiores consectetur dicta, unde neque vitae commodi similique pariatur corrupti quos. Itaque fugiat veritatis voluptas quos, magnam nulla.</p>
+            </div>
+            <div class="ab" id="ab-4">
+                <img src="main1/png-transparent-platter-of-grilled-lamb-italian-cuisine-pizza-pasta-food-plate-healthy-food-food-beef-roast-beef-thumbnail.png" alt="" srcset="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit odio iste officia! Quasi, iusto ad temporibus similique quaerat laboriosam optio repellendus iste sed earum porro. Eaque ab fugiat nesciunt assumenda. Lorem ipsum dolor sit amet consectetur, adipisicing Lorem ipsum dolor sit amet consectetur, adipisicing elit.</elit></p>
+            </div>
+        </div>
+        <div class="table" id="TABLE">
+            <h1>BOOK TABLE ONLINE</h1>
+           <form action="#" id="form">
+            <div class="contact">
+                <div class="cont">
+                    <input type="text" name="name" id="name" placeholder="Name">
+                </div>
+                <div class="cont">
+                    <input type="date" name="date" id="date" placeholder="Date of booking">
+                </div>
+                <div class="cont">
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </div>
+                <div class="cont">
+                    <input type="number" for="contact" id="contact" placeholder="Contact">
+                </div>
+                <div class="submit">
+                    <input type="Submit" value="submit" id="submit">
+                    <input type="reset" value="reset now" id="reset"><!--it -->
+                </div>
+            </div>
+           </form>
+        </div>
+    </div>
+    <script>
+        let ul=document.getElementById('ul');
+        let J=document.getElementsByClassName('line');
+        function myfunction(){
+            if (ul.style.display=="none"){
+                ul.style.display="flex";
+                ul.style.flexDirection="column";
+
+            }
+            else{
+                ul.style.display="none";
+            }
+        }
+    </script>
+</body>
+</html>
